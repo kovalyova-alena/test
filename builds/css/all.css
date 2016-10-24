@@ -177,7 +177,6 @@
   font-weight: normal;
   font-style: normal;
 }
-\n
-a {
-  text-decoration: none;
+img {
+  border: 10px solid #000;
 }

@@ -1,8 +1,22 @@
 <!DOCTYPE html>
-html (lang="en")
+html(lang="en")
 	head
 		meta(charset="UTF-8")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js")
+		script(src="lib/fancybox/jquery.fancybox.pack.js", type="text/javascript")
+		link(rel="stylesheet", href="lib/fancybox/jquery.fancybox.css")
+		link(rel="stylesheet", href="all.min.css")
 		title Document
-	body
-		include img.jade
+body
+	.container
+		#container-for-data
+			- var count = 23
+			- for (var i = 13; i < count; i++){
+				a(class="fancybox", href="img/portfolio#{i}.jpg", data-fancybox-group="gallery")
+					img(src="img/small/portfolio#{i}.jpg", alt="fff")
+			-}
+	script.
+		$(document).ready(function() {
+			$('.fancybox').fancybox();
+		});
 

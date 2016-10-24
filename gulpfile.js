@@ -20,12 +20,6 @@ gulp.task('image', function () {
         .pipe(gulp.dest('./builds/img/'));
 });
 
-gulp.task('concat', function () {
-  return gulp.src('./css/*.css')
-    .pipe(concatCss("all.css"))
-    .pipe(gulp.dest('./builds/css/'));
-});
-
 
 gulp.task('styl', function() {
     return gulp.src('./styl/*.styl')
@@ -61,13 +55,12 @@ gulp.task('jade', function() {
 
 
 
-gulp.task('css', function () {
-    return gulp.src('./public/css/*.css')
-        .pipe(cssmin())
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest('./public/build/'));
+gulp.task('css', function () { 
+	return gulp.src('./css/*.css') 
+	.pipe(concatCss("all.css")) 
+	.pipe(cssmin()) 
+	.pipe(rename({suffix: '.min'})) 
+	.pipe(gulp.dest('./builds/')); 
 });
 
 
